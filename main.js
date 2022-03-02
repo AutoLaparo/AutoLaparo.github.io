@@ -25,11 +25,14 @@ submitForm);
 function submitForm(e){
 
     e.preventDefault();
-    
+    console.log("check1");
 
     var name = getInputVal('Name');
+    console.log("checkname");
     var email = getInputVal('Email' );
+    console.log("checkemail");
     var institution = getInputVal('Institution');
+    console.log("checkinsti");
 
 
     console.log(name);
