@@ -27,15 +27,15 @@ function submitForm(e){
     e.preventDefault();
     
 
-    var name = getInputVal('name');
-    var email = getInputVal('email' );
-    var organiztion = getInputVal('organization');
+    var name = getInputVal('Name');
+    var email = getInputVal('Email' );
+    var institution = getInputVal('Institution');
 
 
     console.log(name);
     console.log(email);
 
-    add_data(name,email,organiztion);
+    add_data(name,email,institution);
 
     
 
@@ -51,12 +51,12 @@ function getInputVal(id){
 }
 
 
-function add_data(name, email,organiztion){
+function add_data(name, email,institution){
 
     db.collection("download_register").add({
-       name:name,
-       email:email,
-       organiztion:organiztion
+       Name:name,
+       Email:email,
+       Institution:institution
 
     })
     .then((docRef) => {
