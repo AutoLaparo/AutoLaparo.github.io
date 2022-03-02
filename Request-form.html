@@ -84,7 +84,7 @@
               <input type="checkbox" id="checkbox-a30d" name="remember" value="On">
               <label for="checkbox-a30d" class="u-label">Remember me</label>
             </div>
-            <a type="submit" class="u-btn u-btn-submit u-button-style" onclick="submit_alert()" href="index.html">Submit</a>
+            <a type="submit" class="u-btn u-btn-submit u-button-style" onclick="submit_alert()">Submit</a>
             <!-- <div class="u-align-left u-form-group u-form-submit">
               <a type="submit" href="#" class="u-btn u-btn-submit u-button-style">Submit<br>
               </a>
@@ -119,8 +119,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
     <script src="main.js">
-    console.log("checked")
+   
+    </script>
+    <script>
     function submit_alert(){
+      console.log("checked")
       alert("Information are sent to your email. Please check you mail box.");
     }
     </script>
