@@ -23,7 +23,7 @@ document.getElementById('downloadform').addEventListener('submit',
 submitForm);
 
 function submitForm(e){
-
+    alert("Information are sent to your email. Please check you mail box.")
     e.preventDefault();
     console.log("check1");
 
