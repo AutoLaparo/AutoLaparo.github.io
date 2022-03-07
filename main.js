@@ -33,7 +33,7 @@ function submitForm(e){
     console.log("checkemail");
     var institution = getInputVal('Institution');
     console.log("checkinsti");
-    var dataset = document.getElementById('dataset');
+    var dataset = document.getElementById('Dataset');
     // console.log(dataset);
     
     // console.log(dataset.options[dataset.selectedIndex].value);
@@ -41,7 +41,7 @@ function submitForm(e){
     // console.log(name);
     // console.log(email);
 
-    add_data(name,email,institution);
+    add_data(name,email,institution,dataset);
 
     
 
@@ -57,7 +57,7 @@ function getInputVal(id){
 }
 
 
-function add_data(name, email,institution){
+function add_data(name, email,institution,dataset){
 
     db.collection("download_register").add({
        Name:name,
