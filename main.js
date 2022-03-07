@@ -33,11 +33,13 @@ function submitForm(e){
     console.log("checkemail");
     var institution = getInputVal('Institution');
     console.log("checkinsti");
-    var dataset = getInputVal('datset')
-    console.log(dataset)
+    var dataset = document.getElementById('dataset');
+    // console.log(dataset);
+    
+    // console.log(dataset.options[dataset.selectedIndex].value);
 
-    console.log(name);
-    console.log(email);
+    // console.log(name);
+    // console.log(email);
 
     add_data(name,email,institution);
 
