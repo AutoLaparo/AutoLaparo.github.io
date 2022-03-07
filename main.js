@@ -33,7 +33,8 @@ function submitForm(e){
     console.log("checkemail");
     var institution = getInputVal('Institution');
     console.log("checkinsti");
-
+    var dataset = getInputVal('datset')
+    console.log(dataset)
 
     console.log(name);
     console.log(email);
@@ -59,7 +60,8 @@ function add_data(name, email,institution){
     db.collection("download_register").add({
        Name:name,
        Email:email,
-       Institution:institution
+       Institution:institution,
+       Dataset:dataset
 
     })
     .then((docRef) => {
