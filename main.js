@@ -33,7 +33,8 @@ function submitForm(e){
     console.log("checkemail");
     var institution = getInputVal('Institution');
     console.log("checkinsti");
-    var dataset = document.getElementById('Dataset');
+    var dataset_choice = document.getElementById('Dataset');
+    var dataset = dataset_choice.options[dataset_choice.selectedIndex].value
     // console.log(dataset);
     
     // console.log(dataset.options[dataset.selectedIndex].value);
