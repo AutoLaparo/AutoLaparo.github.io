@@ -41,7 +41,7 @@
         </a>
       </div></header>
     <section class="u-align-center u-clearfix u-section-1" id="sec-19c1">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-1">
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
         <h1 class="u-text u-text-1">An Integrated Dataset with Multi-Tasks towards Image-Guided&nbsp;Surgical Automation in Laparoscopic Hysterectomy</h1>
       </div>
     </section>
@@ -66,36 +66,44 @@
         <h1 class="u-text u-text-1"><b>Request Form</b>
         </h1>
         <div class="u-expanded-width u-palette-1-base u-shape u-shape-rectangle u-shape-2"></div>
-        <div class="u-form u-login-control u-form-1">
-          <form action="#" method="POST" id= "downloadform"class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+        <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-form u-login-control u-form-1">
+          <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
               <label for="username-a30d" class="u-label">Name*</label>
-              <input type="text" placeholder="Enter your name" id="Name" name="Name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
+              <input type="text" placeholder="Enter your name" id="username-a30d" name="Name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
             </div>
             <div class="u-form-group u-form-password">
               <label for="password-a30d" class="u-label">Email*</label>
-              <input type="text" placeholder="Enter your Email address" id="Email" name="Email" aria-describedby="emailHelp" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
+              <input type="text" placeholder="Enter your email address" id="password-a30d" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="">
             </div>
             <div class="u-form-group u-form-group-3">
-              <label for="text-647c" class="u-label">Institution*</label>
-              <input type="text" placeholder="Enter your Institution" id="Institution" name="Institution" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="required">
+              <label for="text-647c" class="u-label">Organisation*</label>
+              <input type="text" placeholder="Enter your organisation" id="text-647c" name="Organisation" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="required">
+            </div>
+            <div class="u-form-group u-form-select u-form-group-4">
+              <label for="select-6816" class="u-label">Dataset*</label>
+              <div class="u-form-select-wrapper">
+                <select id="select-6816" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="required">
+                  <option value="LHD-T1">LHD-T1</option>
+                  <option value="LHD-T2">LHD-T2</option>
+                  <option value="LHD-T3">LHD-T3</option>
+                  <option value="LHD-Full">LHD-Full</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
             </div>
             <div class="u-form-checkbox u-form-group">
-              <input type="checkbox" id="checkbox-a30d" name="remember" value="On">
-              <label for="checkbox-a30d" class="u-label">Remember me</label>
+              <input type="checkbox" id="checkbox-a30d" name="not for commercial" value="On" required="required">
+              <label for="checkbox-a30d" class="u-label">I agree that the dataset will be used only for academic research, not for commercial usage.</label>
             </div>
-            <button type="submit" class="u-btn u-btn-submit u-button-style">Submit</button>
-            <!-- <div class="u-align-left u-form-group u-form-submit">
-              <a type="submit" href="#" class="u-btn u-btn-submit u-button-style">Submit<br>
+            <div class="u-align-left u-form-group u-form-submit">
+              <a href="#" class="u-btn u-btn-submit u-button-style">Submit<br>
               </a>
               <input type="submit" value="submit" class="u-form-control-hidden">
-            </div> -->
+            </div>
             <input type="hidden" value="" name="recaptchaResponse">
           </form>
         </div>
-        <a href="#" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-palette-1-base u-btn-2">Forgot password?</a>
-        <a href="#" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-forgot-name u-none u-text-palette-1-base u-btn-3">Forgot username?</a>
-        <a href="#" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-create-account u-none u-text-palette-1-base u-btn-4">Don't have an account?</a>
       </div>
     </section>
     
@@ -104,7 +112,7 @@
         <p class="u-small-text u-text u-text-variant u-text-1">@ 2022 Hong Kong Centre For Logistics Robotics<br>&nbsp;- All Rights Reserved
         </p>
       </div></footer>
-    <!-- <section class="u-backlink u-clearfix u-grey-80">
+    <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
         <span>Website Templates</span>
       </a>
@@ -114,10 +122,6 @@
       <a class="u-link" href="https://nicepage.com/" target="_blank">
         <span>Website Builder Software</span>
       </a>. 
-    </section> -->
-    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
-    <script src="main.js">console.log("checked")</script>
+    </section>
   </body>
 </html>
