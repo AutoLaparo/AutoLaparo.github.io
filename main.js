@@ -1,3 +1,5 @@
+import { get_time, get_ip } from './function.js' ;
+
 var firebaseConfig = {
     apiKey: "AIzaSyBwV9s3L6XmwBGTlcJOflXMuHHrYizEay0",
     authDomain: "website-record.firebaseapp.com",
@@ -35,14 +37,18 @@ function submitForm(e){
     console.log("checkinsti");
     var dataset_choice = document.getElementById('Dataset');
     var dataset = dataset_choice.options[dataset_choice.selectedIndex].value
-    // console.log(dataset);
+    var date = get_time();
+    var ip = get_ip();
+    console.log(dataset);
     
-    // console.log(dataset.options[dataset.selectedIndex].value);
+    console.log(dataset.options[dataset.selectedIndex].value);
 
-    // console.log(name);
-    // console.log(email);
+    console.log(name);
+    console.log(email);
+    console.log(dateTime);
+    console.log(ip);
 
-    add_data(name,email,institution,dataset);
+    add_data(name,email,institution,dataset,date,ip);
 
     
 
@@ -58,13 +64,15 @@ function getInputVal(id){
 }
 
 
-function add_data(name, email,institution,dataset){
+function add_data(name, email,institution,dataset,date,ip){
 
     db.collection("download_register").add({
        Name:name,
        Email:email,
        Institution:institution,
-       Dataset:dataset
+       Dataset:dataset,
+       Date:date,
+       IP:ip
 
     })
     .then((docRef) => {
