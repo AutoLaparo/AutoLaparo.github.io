@@ -47,7 +47,10 @@ function submitForm(e){
     console.log(email);
     console.log(dateTime);
     console.log(ip);
+    console.log("checked")
+    alert("Information are sent to your email. Please check you mail box.");
 
+    location.href = "index.html";
     add_data(name,email,institution,dataset,date,ip);
 
     
