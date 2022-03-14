@@ -1,4 +1,4 @@
-import { get_time, get_ip } from './function.js' ;
+
 
 var firebaseConfig = {
     apiKey: "AIzaSyBwV9s3L6XmwBGTlcJOflXMuHHrYizEay0",
@@ -16,9 +16,29 @@ var firebaseConfig = {
 
 var db = firebase.firestore();
 
+function get_time(){
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return date+' '+time;
+  
+  }
 
+function text(url) {
+    return fetch(url).then(res => res.text());
+}
 
-
+function get_ip(){
+  var ip;
+  ip = text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+    
+    let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
+    return data.match(ipRegex)[0];
+    
+  });
+  console.log(ip);
+  return ip;
+}
 
 
 document.getElementById('downloadform').addEventListener('submit',
