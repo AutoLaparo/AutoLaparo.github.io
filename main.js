@@ -65,7 +65,7 @@ function submitForm(e){
 
     console.log(name);
     console.log(email);
-    console.log(dateTime);
+    console.log(date);
     console.log(ip);
     console.log("checked")
     alert("Information are sent to your email. Please check you mail box.");
