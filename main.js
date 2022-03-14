@@ -62,7 +62,7 @@ function submitForm(e){
     console.log(dataset);
      
     // console.log(dataset.options[dataset.selectedIndex].value);
-
+    
     console.log(name);
     console.log(email);
     console.log(date);
