@@ -58,7 +58,7 @@ function submitForm(e){
     var dataset_choice = document.getElementById('Dataset');
     var dataset = dataset_choice.options[dataset_choice.selectedIndex].value
     var date = get_time();
-    var ip = get_ip();
+ 
     console.log(dataset);
      
     // console.log(dataset.options[dataset.selectedIndex].value);
@@ -66,12 +66,12 @@ function submitForm(e){
     console.log(name);
     console.log(email);
     console.log(date);
-    console.log(ip);
+
     console.log("checked")
-    alert("Information are sent to your email. Please check you mail box.");
+    alert("You request is submitted! Dataset information will be sent to your email.");
 
     location.href = "index.html";
-    add_data(name,email,institution,dataset,date,ip);
+    add_data(name,email,institution,dataset,date);
 
     
 
@@ -87,8 +87,15 @@ function getInputVal(id){
 }
 
 
-function add_data(name, email,institution,dataset,date,ip){
+function add_data(name, email,institution,dataset,date){
 
+
+  text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+    
+    let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
+    ip = data.match(ipRegex)[0];
+    
+  
     db.collection("download_register").add({
        Name:name,
        Email:email,
@@ -104,7 +111,7 @@ function add_data(name, email,institution,dataset,date,ip){
     .catch((error) => {
         console.error("Error adding document: ", error);
     });
-
+  });
 
 
 }

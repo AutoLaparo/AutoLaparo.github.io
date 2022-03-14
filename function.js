@@ -15,33 +15,24 @@ function text(url) {
     return fetch(url).then(res => res.text());
 }
 
-function get_ip(){
-  var ip;
-  ip = text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
-    
-    let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
-    return data.match(ipRegex)[0];
-    
-  });
-  console.log(ip);
-  return ip;
-}
-
-var ip = get_ip();
-
-console.log(ip);
-
-firebase.firestore().collection("visit-ip-record").doc(dateTime).set({
+text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
+  let ip = data.match(ipRegex)[0];
   
-  "ip-address": ip,
-  "dateTime": dateTime
+  console.log(ip);
 
-})
-.then((docRef) => {
-    console.log("ip: ", ip);
-})
-.catch((error) => {
-    console.error("Error adding ip: ", error);
+  firebase.firestore().collection("visit-ip-record").doc(dateTime).set({
+    
+    "ip-address": ip,
+    "dateTime": dateTime
+  
+  })
+  .then((docRef) => {
+      console.log("ip: ", ip);
+  })
+  .catch((error) => {
+      console.error("Error adding ip: ", error);
+  });
 });
 
 
