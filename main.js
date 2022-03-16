@@ -81,8 +81,8 @@ function add_data(name, email,institution,dataset,date){
     
     let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
     ip = data.match(ipRegex)[0];
-    concole.log('into add_data')
-    db.collection("download_register").orderBy("", "desc").doc(email).add({
+    // console.log(docRef)
+    db.collection("download_register").doc(email).set({
        Name:name,
        Email:email,
        Institution:institution,
@@ -91,14 +91,14 @@ function add_data(name, email,institution,dataset,date){
        IP:ip
 
     })
-    .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
+    .then((email) => {
+        console.log("Document written with ID: ", email);
     })
     .catch((error) => {
         console.error("Error adding document: ", error);
     });
   });
-  location.href = "index.html";
+  // location.href = "index.html";
 
 }
 
