@@ -17,12 +17,14 @@ var firebaseConfig = {
 var db = firebase.firestore();
 
 function get_time(){
-    var today = new Date();
-    var date = today.getFullYear()+'-'+('00'+today.getMonth()+1).slice(-2)+'-'+('00'+today.getDate()).slice(-2);
-    var time = today.getHours() + ":" + ('00'+today.getMinutes()).slice(-2) + ":" + ('00'+today.getSeconds()).slice(-2);
-    return date+' '+time;
-  
-  }
+  var today = new Date();
+  var date = today.getFullYear()+'-'+('00'+(today.getMonth()+1)).slice(-2)+'-'+('00'+today.getDate()).slice(-2);
+  var time = today.getHours() + ":" + ('00'+today.getMinutes()).slice(-2) + ":" + ('00'+today.getSeconds()).slice(-2);
+  return [date,time];
+
+}
+
+
 
 function text(url) {
     return fetch(url).then(res => res.text());
@@ -44,7 +46,9 @@ function submitForm(e){
     console.log("checkinsti");
     var dataset_choice = document.getElementById('Dataset');
     var dataset = dataset_choice.options[dataset_choice.selectedIndex].value
-    var date = get_time();
+    var dateTime=get_time();
+    var date = dateTime[0], time=dateTime[1]
+    console.log(date,time);
  
     console.log(dataset);
      
@@ -52,13 +56,13 @@ function submitForm(e){
     
     console.log(name);
     console.log(email);
-    console.log(date);
+
 
     console.log("checked")
     alert("You request is submitted! Dataset information will be sent to your email.");
 
     
-    add_data(name,email,institution,dataset,date);
+    add_data(name,email,institution,dataset,date,time);
 
     
 
@@ -74,7 +78,7 @@ function getInputVal(id){
 }
 
 
-function add_data(name, email,institution,dataset,date){
+function add_data(name, email,institution,dataset,date,time){
 
 
   text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
@@ -82,12 +86,13 @@ function add_data(name, email,institution,dataset,date){
     let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
     ip = data.match(ipRegex)[0];
     // console.log(docRef)
-    db.collection("download_register").doc(email).set({
+    db.collection("download_register").doc(email).collection(dataset).add({
        Name:name,
        Email:email,
        Institution:institution,
        Dataset:dataset,
        Date:date,
+       Time:time,
        IP:ip
 
     })
@@ -98,7 +103,7 @@ function add_data(name, email,institution,dataset,date){
         console.error("Error adding document: ", error);
     });
   });
-  // location.href = "index.html";
+  location.href = "index.html";
 
 }
 
