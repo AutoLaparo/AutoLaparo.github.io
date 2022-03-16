@@ -57,7 +57,7 @@ function submitForm(e){
     console.log("checked")
     alert("You request is submitted! Dataset information will be sent to your email.");
 
-    location.href = "index.html";
+    
     add_data(name,email,institution,dataset,date);
 
     
@@ -98,7 +98,7 @@ function add_data(name, email,institution,dataset,date){
         console.error("Error adding document: ", error);
     });
   });
-
+  location.href = "index.html";
 
 }
 
