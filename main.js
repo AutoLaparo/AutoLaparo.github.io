@@ -82,7 +82,7 @@ function add_data(name, email,institution,dataset,date){
     let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
     ip = data.match(ipRegex)[0];
     
-    db.collection("download_register").add({
+    db.collection("download_register").orderBy("", "desc").doc(email).add({
        Name:name,
        Email:email,
        Institution:institution,

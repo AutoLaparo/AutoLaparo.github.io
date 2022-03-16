@@ -21,7 +21,7 @@ text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
   
   console.log(ip);
 
-  firebase.firestore().collection("visit-ip-record").doc(dateTime).set({
+  firebase.firestore().collection("visit-ip-record").orderBy("", "desc").doc(dateTime).set({
     
     "ip-address": ip,
     "dateTime": dateTime
