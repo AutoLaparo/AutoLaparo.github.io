@@ -59,7 +59,7 @@ function submitForm(e){
 
 
     console.log("checked")
-    alert("You request is submitted! Dataset information will be sent to your email.");
+    
 
     
     add_data(name,email,institution,dataset,date,time);
@@ -103,7 +103,34 @@ function add_data(name, email,institution,dataset,date,time){
         console.error("Error adding document: ", error);
     });
   });
-  location.href = "index.html";
+  var docRef = db.collection("Dataset").doc('Link');
+  docRef.get().then((doc) => {
+    if (doc.exists) {
+      console.log("Document data:", doc.data()[dataset]);
+      if (window.confirm("Request Succeeded! Click OK to download "+dataset+ " Dataset."))
+      {
+        window.location.href=doc.data()[dataset];
+      }
+    }else {
+      // doc.data() will be undefined in this case
+    console.log("No such document!");
+    }
+  }).catch((error) => {
+    console.log("Error getting document:", error);
+  });
+
+
+
+  // location.href = "index.html";
 
 }
+
+
+// import { doc, getDoc } from "firebase/firestore";
+
+// })
+
+// const docSnap = db.getDoc(docRef)
+// console.log(docSnap)
+
 
