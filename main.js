@@ -109,7 +109,13 @@ function add_data(name, email,institution,dataset,date,time){
       console.log("Document data:", doc.data()[dataset]);
       if (window.confirm("Request Succeeded! Click OK to download "+dataset+ " Dataset."))
       {
-        window.location.href=doc.data()[dataset];
+        
+        window.open(
+          doc.data()[dataset],
+          '_blank' // <- This is what makes it open in a new window.
+        );
+        location.href = "index.html";
+        
       }
     }else {
       // doc.data() will be undefined in this case
@@ -121,7 +127,7 @@ function add_data(name, email,institution,dataset,date,time){
 
 
 
-  // location.href = "index.html";
+  
 
 }
 
