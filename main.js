@@ -36,29 +36,29 @@ submitForm);
 function submitForm(e){
     
     e.preventDefault();
-    console.log("check1");
+    // console.log("check1");
 
     var name = getInputVal('Name');
-    console.log("checkname");
+    // console.log("checkname");
     var email = getInputVal('Email' );
-    console.log("checkemail");
+    // console.log("checkemail");
     var institution = getInputVal('Institution');
-    console.log("checkinsti");
+    // console.log("checkinsti");
     var dataset_choice = document.getElementById('Dataset');
     var dataset = dataset_choice.options[dataset_choice.selectedIndex].value
     var dateTime=get_time();
     var date = dateTime[0], time=dateTime[1]
-    console.log(date,time);
+    // console.log(date,time);
  
-    console.log(dataset);
+    // console.log(dataset);
      
     // console.log(dataset.options[dataset.selectedIndex].value);
     
-    console.log(name);
-    console.log(email);
+    // console.log(name);
+    // console.log(email);
 
 
-    console.log("checked")
+    // console.log("checked")
     
 
     
