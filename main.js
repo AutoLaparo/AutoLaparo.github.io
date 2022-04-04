@@ -110,10 +110,10 @@ function add_data(name, email,institution,dataset,date,time){
       if (window.confirm("Request Succeeded! Click OK to download "+dataset+ " Dataset."))
       {
         
-        window.open(
-          doc.data()[dataset],
-          '_blank' // <- This is what makes it open in a new window.
-        );
+        // window.open(
+        //   doc.data()[dataset],
+        //   '_blank' // <- This is what makes it open in a new window.
+        // );
         // location.href = "index.html";
         
       }
