@@ -31,7 +31,7 @@ function text(url) {
 }
 
 document.getElementById('downloadform').addEventListener('submit',
-submitForm);
+text);//submitForm);
 
 function submitForm(e){
     
