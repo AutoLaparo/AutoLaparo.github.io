@@ -114,7 +114,7 @@ function add_data(name, email,institution,dataset,date,time){
           doc.data()[dataset],
           '_blank' // <- This is what makes it open in a new window.
         );
-        location.href = "index.html";
+        // location.href = "index.html";
         
       }
     }else {
