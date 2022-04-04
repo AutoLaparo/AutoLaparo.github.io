@@ -27,7 +27,8 @@ function get_time(){
 
 
 function text(url) {
-    return console.log(fetch(url).then(res => res.text()));
+    console.log("Testing1")
+    return fetch(url).then(res => res.text());
 }
 
 document.getElementById('downloadform').addEventListener('submit',
