@@ -27,12 +27,12 @@ function get_time(){
 
 
 function text(url) {
-    console.log("Testing1")
+    // console.log("Testing1")
     return fetch(url).then(res => res.text());
 }
 
 document.getElementById('downloadform').addEventListener('submit',
-text);//submitForm);
+submitForm);
 
 function submitForm(e){
     
@@ -111,11 +111,11 @@ function add_data(name, email,institution,dataset,date,time){
       if (window.confirm("Request Succeeded! Click OK to download "+dataset+ " Dataset."))
       {
         
-        // window.open(
-        //   doc.data()[dataset],
-        //   '_blank' // <- This is what makes it open in a new window.
-        // );
-        // location.href = "index.html";
+        window.open(
+          doc.data()[dataset],
+          '_blank' // <- This is what makes it open in a new window.
+        );
+        location.href = "index.html";
         
       }
     }else {
