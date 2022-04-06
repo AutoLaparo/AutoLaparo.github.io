@@ -108,13 +108,19 @@ function add_data(name, email,institution,dataset,date,time){
   docRef.get().then((doc) => {
     if (doc.exists) {
       console.log("Document data:", doc.data()[dataset]);
+      // postToURL("https://formspree.io/f/xdobdkzy","q","a");
+      document.getElementById('downloadform').action = 'https://formspree.io/f/xdobdkzy';
+      document.getElementById('downloadform').submit();
+      
       if (window.confirm("Request Succeeded! Click OK to download "+dataset+ " Dataset."))
       {
-        
+        document.getElementById('downloadform').action = 'https://formspree.io/f/xdobdkzy';
+        document.getElementById('downloadform').submit();
         window.open(
           doc.data()[dataset],
           '_blank' // <- This is what makes it open in a new window.
         );
+        
         location.href = "index.html";
         
       }
