@@ -117,6 +117,7 @@ function add_data(name, email,institution,dataset,date,time){
       {
         document.getElementById('downloadform').action = 'https://formspree.io/f/xdobdkzy';
         document.getElementById('downloadform').submit();
+        console.log("getting document:");
         // window.open(
         //   doc.data()[dataset],
         //   // '_blank' // <- This is what makes it open in a new window.
