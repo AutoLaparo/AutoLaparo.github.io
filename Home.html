@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="​An Integrated Dataset with Multi-Tasks towards Image-Guided&nbsp;Surgical Automation in Laparoscopic Hysterectomy, ​Description">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 4.13.4, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i">
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/curi-logo.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-c9e9"><div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+      </div></header>
+    <section class="u-align-center u-clearfix u-gradient u-section-1" id="sec-32b5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-body-alt-color u-text-1">AutoLaparo: A New Dataset of Integrated Multi-tasks&nbsp;for&nbsp;<br>Image-guided Surgical Automation​ in Laparoscopic Hysterectomy
+        </h2>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-f342">
+      <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
+        <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-1"> Computer-assisted minimally invasive surgery has great potential in benefiting modern operating theatres. The video data streamed from the endoscope provide rich information to support context-awareness for next-generation intelligent surgical systems.&nbsp;To enhance the surgical scene understanding towards image-guided automation, one promising solution is to rely on learning-based methods, which&nbsp;highly relies on large-scale, high-quality and multi-task labelled data. To address this issue, we present and release the AutoLaparo dataset.<br>
+          <br>AutoLaparo is a new dataset of integrated multi-tasks for image-guided surgical automation in laparoscopic hysterectomy.&nbsp;The dataset is developed based on full-length videos of entire hysterectomy procedures. Specifically, three different yet highly correlated tasks are formulated in the dataset, including <span style="font-style: italic;">surgical workflow recognition</span>, <span style="font-style: italic;">laparoscope motion prediction</span>, and <span style="font-style: italic;">instrument and key anatomy segmentation</span>. In addition, experimental results with state-of-the-art models are provided as reference benchmarks for further model developments and evaluations on this dataset.<br>
+          <br>[<a href="https://arxiv.org/abs/2208.02049" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">paper</a>] [<a href="https://github.com/ziyiwangx/AutoLaparo" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">code</a>]<span class="u-text-palette-3-base"></span>
+        </p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-3" id="carousel_14db">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-75 u-text-1"><b>Dataset description</b>
+        </h2>
+        <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-2">The AutoLaparo dataset contains 21 videos of laparoscopic hysterectomy collected from Prince of Wales Hospital, Hong Kong, during October to December, 2018.&nbsp;The release of this dataset has been approved by ​Joint CUHK-NTEC Clinical Research Ethics Committee and the data are protected without disclosure of any personal information. The videos are recorded at 25 fps with a standard resolution of 1920×1080 pixels.&nbsp;
+The duration of videos ranges from 27 to 112 minutes due to the varying difficulties of the surgeries.&nbsp;&nbsp;After pre-processing, the average duration is 66 minutes and the total duration is 1388 minutes, reaching a large-scale dataset with high-quality. Three sub-datasets are designed for the following three tasks and they are also highly-correlated by applying a three-tier annotation process.&nbsp;<br>
+        </p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-4" id="carousel_d7f8">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-valign-middle-xl u-sheet-1">
+        <h2 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-75 u-text-1"><b> Task 1 Surgical workflow recognition</b>
+        </h2>
+        <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-2">Workflow analysis is fundamental to the scene understanding in surgery and will help to recognize current surgical phase and also provide high-level information to the other two tasks. In the dataset, the hysterectomy procedure is divided into 7 phases and phase labels are annotated at 1 fps:<br>
+        </p>
+        <div class="u-expanded-width-xs u-table u-table-responsive u-table-1">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="22%">
+              <col width="78%">
+            </colgroup>
+            <thead class="u-custom-font u-font-pt-sans u-table-header u-text-grey-75">
+              <tr style="height: 32px;">
+                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-1">Phase ID</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-2">Phase&nbsp; &nbsp;</th>
+              </tr>
+            </thead>
+            <tbody class="u-align-left u-custom-font u-table-body u-text-grey-80 u-table-body-1">
+              <tr style="height: 32px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-3">1<br>
+                </td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-4">Preparation</td>
+              </tr>
+              <tr style="height: 32px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-5">2</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-6">Dividing Ligament and Peritoneum</td>
+              </tr>
+              <tr style="height: 29px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-7">3</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-8">Dividing Uterine Vessels and Ligament</td>
+              </tr>
+              <tr style="height: 32px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-9">4</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-10">Transecting the Vagina</td>
+              </tr>
+              <tr style="height: 32px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-11">5</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-12">Specimen Removal</td>
+              </tr>
+              <tr style="height: 32px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-13">6</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-14">Suturing</td>
+              </tr>
+              <tr style="height: 32px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-15">7</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-16">Washing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <img class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-image u-image-contain u-image-default u-image-1" src="images/10_2_000012.svg" alt="" data-image-width="811" data-image-height="164">
+        <p class="u-align-center u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-3"> The ​order information of laparoscopic hysterectomy and sample frames of each phase (P1-P7)</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-5" id="carousel_9808">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-sheet-1">
+        <h2 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-75 u-text-1"><b> Task 2 Laparoscope motion prediction</b>
+        </h2>
+        <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-2">
+          <span class="u-text-grey-80">To promote learning-based automatic FoV control, this sub-dataset is built with selected clips that corresponds the laparoscope visual feedback to its motion mode.&nbsp;&nbsp;In the dataset, 300 clips are carefully selected from Phase 2-4 of the aforementioned 21 videos and each clip lasts for 10 seconds. These clips contain typical laparoscope motions and the motion time <span style="font-style: italic;">T</span> is set as the fifth second. Seven types of motion modes are defined, including one <span style="font-style: italic;">Static</span> mode and six non-static mode: <span style="font-style: italic;">Up</span>, <span style="font-style: italic;">Down</span>, <span style="font-style: italic;">Left</span>, <span style="font-style: italic;">Right</span>, <span style="font-style: italic;">Zoom-in</span>, and <span style="font-style: italic;">Zoom-out</span>.
+          </span>
+          <br>
+          <br>
+        </p>
+        <div class="u-uploaded-video u-video u-video-contain u-video-1">
+          <div class="embed-responsive">
+            <video class="embed-responsive-item" muted="">
+              <source src="files/Up-1_2.mp4" type="video/mp4">
+              <p>Your browser does not support HTML5 video.</p>
+            </video>
+            <button class="u-video-poster"></button>
+          </div>
+        </div>
+        <div class="u-uploaded-video u-video u-video-contain u-video-2">
+          <div class="embed-responsive">
+            <video class="embed-responsive-item" muted="">
+              <source src="files/Zoomin_2.mp4" type="video/mp4">
+              <p>Your browser does not support HTML5 video.</p>
+            </video>
+            <button class="u-video-poster"></button>
+          </div>
+        </div>
+        <div class="u-uploaded-video u-video u-video-contain u-video-3">
+          <div class="embed-responsive">
+            <video class="embed-responsive-item" muted="">
+              <source src="files/mode_left_1.mp4" type="video/mp4">
+              <p>Your browser does not support HTML5 video.</p>
+            </video>
+            <button class="u-video-poster"></button>
+          </div>
+        </div>
+        <p class="u-align-center u-custom-font u-font-pt-sans u-hidden-lg u-hidden-md u-hidden-xl u-text u-text-grey-80 u-text-3">From top to bottom: video examples of typical laparoscopic motions&nbsp;<span style="font-style: italic;">Up, Left, and Zoom-in.</span>
+        </p>
+        <p class="u-align-center u-custom-font u-font-pt-sans u-hidden-sm u-hidden-xs u-text u-text-grey-80 u-text-4">From left to right: video examples of typical laparoscopic motions&nbsp;<span style="font-style: italic;">Up, Left, and Zoom-in.</span>
+        </p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-6" id="carousel_b198">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-75 u-text-1"><b> Task 3 Instrument and key anatomy segmentation</b>
+        </h2>
+        <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-2">
+          <span class="u-text-grey-80">For each clip in Task 2, six frames are sampled at 1fps, i.e., frames at time t=0,1,2,3,4,5, and annotated with pixel-wise segmentation, which provides ground truth for Task 3 and also support Task 1 and 2 as additional modality for advanced scene understanding.&nbsp;&nbsp;In the dataset, four types of instruments and one key anatomy is annotated in the dataset:</span>
+          <br>
+        </p>
+        <div class="u-expanded-width-xs u-table u-table-responsive u-table-1">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="12.75%">
+              <col width="8.35%">
+              <col width="78.9%">
+            </colgroup>
+            <thead class="u-table-header">
+              <tr style="height: 42px;">
+                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-1">Category</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-2">ID</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-3">Type</th>
+              </tr>
+            </thead>
+            <tbody class="u-custom-font u-font-pt-sans u-table-body u-text-grey-80 u-table-body-1">
+              <tr style="height: 32px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-4">Anatomy</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-5">1</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-6">Uterus</td>
+              </tr>
+              <tr style="height: 25px;">
+                <td rowspan="4" class="u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-7">Instrument</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-8">1</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-9">Grasping forceps</td>
+              </tr>
+              <tr style="height: 33px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-10">2</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-11">LigaSure</td>
+              </tr>
+              <tr style="height: 27px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-12">3</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-13"> Dissecting and grasping forceps</td>
+              </tr>
+              <tr style="height: 32px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-14">4</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-15"> Electric hook</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-3"> The annotations are performed following the settings of instrument part segmentation, i.e., the shaft and manipulator of each instrument are annotated separately.&nbsp;
+        </p>
+        <img class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-image u-image-contain u-image-default u-image-1" src="images/10_1_00001.svg" alt="" data-image-width="778" data-image-height="184">
+        <p class="u-align-center u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-4">Pixel-wise annoatation for instrument and key anatomy segmentation.</p>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-7" id="carousel_1c58">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-75 u-text-1"><b> Download and citation</b>
+        </h2>
+        <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-2">
+          <span style="font-weight: 700;"> [Data download</span>
+          <span style="font-weight: 700;">]</span>&nbsp;<br>- Please kindly fill the&nbsp;<a href="https://forms.gle/qAbmANGuwgU9uES19" data-page-id="951406360" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">request form</a>&nbsp;if you want to gain access to the dataset. We will send you a link to download the dataset.&nbsp;<br><b>
+            <span style="font-weight: 400; font-style: italic;">
+              <span style="font-weight: 400;">- IMPORTANT</span>
+              <span style="font-style: normal;">: </span>
+            </span>
+            <span style="font-weight: 400;">The released dataset is provided only for&nbsp;academic research, NOT for commercial use.&nbsp;</span></b>
+          <br>&nbsp;<br>
+          <span style="font-weight: 700;">[Citation]</span>&nbsp;<br>- If you use this dataset, please cite:&nbsp;<br>Ziyi Wang, Bo Lu, Yonghao Long, Fangxun Zhong, Tak-Hong Cheung, Qi Dou, and Yunhui Liu, <span style="font-style: italic;">AutoLaparo: A New Dataset of Integrated Multi-tasks for Image-guided Surgical Automation in Laparoscopic Hysterectomy</span>, MICCAI, 2022.<br>&nbsp;<br>For further question about the dataset, please contact ziyiwangx@gmail.com.&nbsp;
+        </p>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-322c"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">T Stone robotics institute, The Chinese University of Hong Kong<br>Copyright © Ziyi Wang
+        </p>
+      </div></footer>
+    
+  
+</body></html>
