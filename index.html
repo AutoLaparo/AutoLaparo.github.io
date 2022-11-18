@@ -23,14 +23,18 @@
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
-		"name": "",
+		"name": "main",
 		"logo": "images/curi-logo.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Home">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
   <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-c9e9"><div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <a href="Home.html" data-page-id="9548344" class="u-image u-logo u-image-1" data-image-width="1600" data-image-height="205" title="Home">
+          <img src="images/curi-logo.png" class="u-logo-image u-logo-image-1">
+        </a>
       </div></header>
     <section class="u-align-center u-clearfix u-gradient u-section-1" id="sec-32b5">
       <div class="u-clearfix u-sheet u-sheet-1">
@@ -42,7 +46,7 @@
       <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
         <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-1"> Computer-assisted minimally invasive surgery has great potential in benefiting modern operating theatres. The video data streamed from the endoscope provide rich information to support context-awareness for next-generation intelligent surgical systems.&nbsp;To enhance the surgical scene understanding towards image-guided automation, one promising solution is to rely on learning-based methods, which&nbsp;highly relies on large-scale, high-quality and multi-task labelled data. To address this issue, we present and release the AutoLaparo dataset.<br>
           <br>AutoLaparo is a new dataset of integrated multi-tasks for image-guided surgical automation in laparoscopic hysterectomy.&nbsp;The dataset is developed based on full-length videos of entire hysterectomy procedures. Specifically, three different yet highly correlated tasks are formulated in the dataset, including <span style="font-style: italic;">surgical workflow recognition</span>, <span style="font-style: italic;">laparoscope motion prediction</span>, and <span style="font-style: italic;">instrument and key anatomy segmentation</span>. In addition, experimental results with state-of-the-art models are provided as reference benchmarks for further model developments and evaluations on this dataset.<br>
-          <br>[<a href="https://arxiv.org/abs/2208.02049" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">paper</a>] [<a href="https://github.com/ziyiwangx/AutoLaparo" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">code</a>]<span class="u-text-palette-3-base"></span>
+          <br>[<a href="https://github.com/ziyiwangx/AutoLaparo" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">paper</a>] [<a href="https://github.com/ziyiwangx/AutoLaparo" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">code</a>]<span class="u-text-palette-3-base"></span>
         </p>
       </div>
     </section>
@@ -51,75 +55,175 @@
         <h2 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-75 u-text-1"><b>Dataset description</b>
         </h2>
         <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-2">The AutoLaparo dataset contains 21 videos of laparoscopic hysterectomy collected from Prince of Wales Hospital, Hong Kong, during October to December, 2018.&nbsp;The release of this dataset has been approved by ​Joint CUHK-NTEC Clinical Research Ethics Committee and the data are protected without disclosure of any personal information. The videos are recorded at 25 fps with a standard resolution of 1920×1080 pixels.&nbsp;
-The duration of videos ranges from 27 to 112 minutes due to the varying difficulties of the surgeries.&nbsp;&nbsp;After pre-processing, the average duration is 66 minutes and the total duration is 1388 minutes, reaching a large-scale dataset with high-quality. Three sub-datasets are designed for the following three tasks and they are also highly-correlated by applying a three-tier annotation process.&nbsp;<br>
+The duration of videos ranges from 27 to 112 minutes due to the varying difficulties of the surgeries.&nbsp;&nbsp;After pre-processing, the average duration is 66 minutes and the total duration is 1388 minutes, reaching a large-scale dataset with high-quality. Three sub-datasets are designed for the following three tasks and they are<br>also highly-correlated by applying a three-tier annotation process.&nbsp;<br>
         </p>
       </div>
     </section>
     <section class="u-clearfix u-section-4" id="carousel_d7f8">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-valign-middle-xl u-sheet-1">
+      <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-75 u-text-1"><b> Task 1 Surgical workflow recognition</b>
         </h2>
-        <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-2">Workflow analysis is fundamental to the scene understanding in surgery and will help to recognize current surgical phase and also provide high-level information to the other two tasks. In the dataset, the hysterectomy procedure is divided into 7 phases and phase labels are annotated at 1 fps:<br>
+        <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-2">Workflow analysis is fundamental to the scene understanding in surgery and will help to recognize current surgical phase and also provide high-level information to the other two tasks. In the dataset, the hysterectomy procedure is divided into 7 phases and each frame is annotated with a phase label:<br>
         </p>
-        <div class="u-expanded-width-xs u-table u-table-responsive u-table-1">
+        <p class="u-align-center u-custom-font u-font-pt-sans u-large-text u-text u-text-grey-80 u-text-variant u-text-3">Table 1. The total duration and average duration (hh:mm:ss) of the full-length videos in the dataset, and proportion of each phase in each video (P1-P7, %)</p>
+        <div class="u-expanded-width-sm u-expanded-width-xs u-table u-table-responsive u-table-1">
           <table class="u-table-entity">
             <colgroup>
-              <col width="22%">
-              <col width="78%">
+              <col width="18.3%">
+              <col width="48.7%">
+              <col width="33%">
             </colgroup>
             <thead class="u-custom-font u-font-pt-sans u-table-header u-text-grey-75">
-              <tr style="height: 32px;">
-                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-1">Phase ID</th>
-                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-2">Phase&nbsp; &nbsp;</th>
+              <tr style="height: 28px;">
+                <th class="u-align-center u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-1">Video num.</th>
+                <th class="u-align-center u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-2">Total duration</th>
+                <th class="u-align-center u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-3">Avg. duration</th>
               </tr>
             </thead>
             <tbody class="u-align-left u-custom-font u-table-body u-text-grey-80 u-table-body-1">
-              <tr style="height: 32px;">
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-3">1<br>
+              <tr style="height: 28px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-4">21<br>
                 </td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-4">Preparation</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-5">23:08:00</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-6">01:06:07</td>
               </tr>
-              <tr style="height: 32px;">
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-5">2</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-6">Dividing Ligament and Peritoneum</td>
+              <tr style="height: 28px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-10 u-table-cell u-table-cell-7"> Phase ID</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-8">Phase<br>
+                </td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-9">Proportion per video</td>
               </tr>
-              <tr style="height: 29px;">
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-7">3</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-8">Dividing Uterine Vessels and Ligament</td>
+              <tr style="height: 28px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-10">1<br>
+                </td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-11">Preparation</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-12">3.2</td>
               </tr>
-              <tr style="height: 32px;">
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-9">4</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-10">Transecting the Vagina</td>
+              <tr style="height: 28px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-13">2</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-14">Dividing Ligament and Peritoneum</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-15">34.2</td>
               </tr>
-              <tr style="height: 32px;">
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-11">5</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-12">Specimen Removal</td>
+              <tr style="height: 28px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-16">3</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-17">Dividing Uterine Vessels and Ligament</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-18">21.7</td>
               </tr>
-              <tr style="height: 32px;">
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-13">6</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-14">Suturing</td>
+              <tr style="height: 28px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-19">4</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-20">Transecting the Vagina</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-21">12.7</td>
               </tr>
-              <tr style="height: 32px;">
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-15">7</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-16">Washing</td>
+              <tr style="height: 28px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-22">5</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-23">Specimen Removal</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-24">1.9</td>
+              </tr>
+              <tr style="height: 28px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-25">6</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-26">Suturing</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-27">17.0</td>
+              </tr>
+              <tr style="height: 28px;">
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-28">7</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-29">Washing</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-30">9.3</td>
               </tr>
             </tbody>
           </table>
         </div>
         <img class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-image u-image-contain u-image-default u-image-1" src="images/10_2_000012.svg" alt="" data-image-width="811" data-image-height="164">
-        <p class="u-align-center u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-3"> The ​order information of laparoscopic hysterectomy and sample frames of each phase (P1-P7)</p>
+        <p class="u-align-center u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-4">Figure 1.​ The ​order information of laparoscopic hysterectomy and sample frames of each phase (P1-P7)</p>
       </div>
     </section>
     <section class="u-clearfix u-section-5" id="carousel_9808">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-sheet-1">
+      <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-75 u-text-1"><b> Task 2 Laparoscope motion prediction</b>
         </h2>
         <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-2">
-          <span class="u-text-grey-80">To promote learning-based automatic FoV control, this sub-dataset is built with selected clips that corresponds the laparoscope visual feedback to its motion mode.&nbsp;&nbsp;In the dataset, 300 clips are carefully selected from Phase 2-4 of the aforementioned 21 videos and each clip lasts for 10 seconds. These clips contain typical laparoscope motions and the motion time <span style="font-style: italic;">T</span> is set as the fifth second. Seven types of motion modes are defined, including one <span style="font-style: italic;">Static </span>mode and six non-static mode: <span style="font-style: italic;">Up</span>, <span style="font-style: italic;">Down</span>, <span style="font-style: italic;">Left</span>, <span style="font-style: italic;">Right</span>, <span style="font-style: italic;">Zoom-in</span>, and <span style="font-style: italic;">Zoom-out</span>.
+          <span class="u-text-grey-80">To promote learning-based automatic FoV control, this sub-dataset is built with selected clips that corresponds the laparoscope visual feedback to its motion mode.&nbsp;&nbsp;In the dataset, 300 clips are carefully selected from Phase 2-4 of the aforementioned 21 videos and each clip lasts for 10 seconds. These clips contain typical laparoscope motions and the motion time <span style="font-style: italic;">T</span> is set as the fifth second. Seven types of motion modes are defined, including one <span style="font-style: italic;">S</span>
+            <span style="font-style: italic;">tatic </span>mode and six non-static mode: <span style="font-style: italic;">Up</span>, <span style="font-style: italic;">Down</span>, <span style="font-style: italic;">Left</span>, <span style="font-style: italic;">Right</span>, <span style="font-style: italic;">Zoom-in</span>, and <span style="font-style: italic;">Zoom-out</span>.
           </span>
           <br>
           <br>
         </p>
+        <p class="u-align-center u-custom-font u-font-pt-sans u-large-text u-text u-text-grey-80 u-text-variant u-text-3">Table 2. Type and number of the clips with laparoscope motion annotation</p>
+        <div class="u-table u-table-responsive u-table-1">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="11%">
+              <col width="11%">
+              <col width="11%">
+              <col width="11.2%">
+              <col width="10.8%">
+              <col width="11.2%">
+              <col width="11%">
+              <col width="11.8%">
+              <col width="11%">
+            </colgroup>
+            <thead class="u-align-center u-grey-10 u-table-header u-table-header-1">
+              <tr style="height: 32px;">
+                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-1">Motion type</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-2">Up</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-3">Down</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-4">Left</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-5">Right</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-6">Zoom-in</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-7">Zoom-out</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-8">Static</th>
+                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-9">All</th>
+              </tr>
+            </thead>
+            <tbody class="u-align-center u-table-body u-table-body-1">
+              <tr style="height: 21px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-10">Train set</td>
+                <td class="u-table-cell u-table-cell-11">14</td>
+                <td class="u-table-cell u-table-cell-12">25</td>
+                <td class="u-table-cell u-table-cell-13">18</td>
+                <td class="u-table-cell u-table-cell-14">30</td>
+                <td class="u-table-cell u-table-cell-15">17</td>
+                <td class="u-table-cell u-table-cell-16">17</td>
+                <td class="u-table-cell u-table-cell-17">54</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-18">170</td>
+              </tr>
+              <tr style="height: 20px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-19">Val. set</td>
+                <td class="u-table-cell u-table-cell-20">3</td>
+                <td class="u-table-cell u-table-cell-21">4</td>
+                <td class="u-table-cell u-table-cell-22">10</td>
+                <td class="u-table-cell u-table-cell-23">15</td>
+                <td class="u-table-cell u-table-cell-24">12</td>
+                <td class="u-table-cell u-table-cell-25">12</td>
+                <td class="u-table-cell u-table-cell-26">10</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-27">57</td>
+              </tr>
+              <tr style="height: 20px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-28">Test set</td>
+                <td class="u-table-cell u-table-cell-29">5</td>
+                <td class="u-table-cell u-table-cell-30">26</td>
+                <td class="u-table-cell u-table-cell-31">9</td>
+                <td class="u-table-cell u-table-cell-32">9</td>
+                <td class="u-table-cell u-table-cell-33">15</td>
+                <td class="u-table-cell u-table-cell-34">15</td>
+                <td class="u-table-cell u-table-cell-35">14</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-36">73</td>
+              </tr>
+            </tbody>
+            <tfoot class="u-align-center u-table-footer u-table-footer-1">
+              <tr style="height: 21px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-37">All num.</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-38">22</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-39">45</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-40">20</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-41">54</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-42">44</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-43">44</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell u-table-cell-44">78</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-45">300</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
         <div class="u-uploaded-video u-video u-video-contain u-video-1">
           <div class="embed-responsive">
             <video class="embed-responsive-item" muted="">
@@ -147,64 +251,188 @@ The duration of videos ranges from 27 to 112 minutes due to the varying difficul
             <button class="u-video-poster"></button>
           </div>
         </div>
-        <p class="u-align-center u-custom-font u-font-pt-sans u-hidden-lg u-hidden-md u-hidden-xl u-text u-text-grey-80 u-text-3">From top to bottom: video examples of typical laparoscopic motions&nbsp;<span style="font-style: italic;">Up, Left, and Zoom-in.</span>
+        <p class="u-align-center u-custom-font u-font-pt-sans u-hidden-lg u-hidden-md u-hidden-xl u-text u-text-grey-80 u-text-4">Figure 2. From top to bottom: video examples of typical laparoscopic motions&nbsp;<span style="font-style: italic;">Up, Left, and Zoom-in.</span>
         </p>
-        <p class="u-align-center u-custom-font u-font-pt-sans u-hidden-sm u-hidden-xs u-text u-text-grey-80 u-text-4">From left to right: video examples of typical laparoscopic motions&nbsp;<span style="font-style: italic;">Up, Left, and Zoom-in.</span>
+        <p class="u-custom-font u-font-pt-sans u-hidden-sm u-hidden-xs u-text u-text-grey-80 u-text-5">Figure 2. From left to right: video examples of typical laparoscopic motions&nbsp;<span style="font-style: italic;">Up, Left, and Zoom-in.</span>
         </p>
       </div>
     </section>
     <section class="u-clearfix u-section-6" id="carousel_b198">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-75 u-text-1"><b> Task 3 Instrument and key anatomy segmentation</b>
         </h2>
         <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-2">
           <span class="u-text-grey-80">For each clip in Task 2, six frames are sampled at 1fps, i.e., frames at time t=0,1,2,3,4,5, and annotated with pixel-wise segmentation, which provides ground truth for Task 3 and also support Task 1 and 2 as additional modality for advanced scene understanding.&nbsp;&nbsp;In the dataset, four types of instruments and one key anatomy is annotated in the dataset:</span>
           <br>
         </p>
-        <div class="u-expanded-width-xs u-table u-table-responsive u-table-1">
+        <p class="u-align-center u-custom-font u-font-pt-sans u-large-text u-text u-text-grey-80 u-text-variant u-text-3">Table 3. Total number of presences in clips and fram​es, and total number of annotations of each class in the segmentation dataset. <span style="font-style: italic;">m</span> and <span style="font-style: italic;">s</span> denote the <span style="font-style: italic;">manipulator </span>and <span style="font-style: italic;">shafr </span>of the instrument, respectively
+        </p>
+        <div class="u-expanded-width-sm u-expanded-width-xs u-table u-table-responsive u-table-1">
           <table class="u-table-entity">
             <colgroup>
-              <col width="12.75%">
-              <col width="8.35%">
-              <col width="78.9%">
+              <col width="13%">
+              <col width="3%">
+              <col width="19.2%">
+              <col width="3.6%">
+              <col width="10.8%">
+              <col width="10.3%">
+              <col width="9.1%">
+              <col width="12.2%">
+              <col width="8.4%">
+              <col width="10.4%">
             </colgroup>
-            <thead class="u-table-header">
-              <tr style="height: 42px;">
-                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-1">Category</th>
-                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-2">ID</th>
-                <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-3">Type</th>
+            <tbody class="u-align-center u-custom-font u-font-pt-sans u-table-body u-text-grey-80 u-table-body-1">
+              <tr style="height: 40px;">
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-first-column u-grey-10 u-table-cell u-table-cell-1"></td>
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-2"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-3" rowspan="2" colspan="4">Type</td>
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-4"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-5" rowspan="2">Presence in clips</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-6" rowspan="2">Presence in frames</td>
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-7"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-8" colspan="4">Annotation number</td>
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-9">number</td> -->
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-10"></td> -->
               </tr>
-            </thead>
-            <tbody class="u-custom-font u-font-pt-sans u-table-body u-text-grey-80 u-table-body-1">
-              <tr style="height: 32px;">
-                <td class="u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-4">Anatomy</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-5">1</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-6">Uterus</td>
+              <tr style="height: 24px;">
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-first-column u-grey-10 u-table-cell u-table-cell-11"></td>
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-12"></td>
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-13"></td>
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-14"></td> -->
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-15">in clips</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-table-cell-16">in frames</td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-border-no-right u-table-cell-17">All</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-border-no-right u-border-no-left u-table-cell-18">Train set</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-border-no-right u-border-no-left u-table-cell-19">Val. set</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-grey-10 u-table-cell u-border-no-left u-table-cell-20">Test set</td>
               </tr>
-              <tr style="height: 25px;">
-                <td rowspan="4" class="u-border-1 u-border-grey-dark-1 u-first-column u-grey-5 u-table-cell u-table-cell-7">Instrument</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-8">1</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-9">Grasping forceps</td>
+              <tr style="height: 26px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-21">Anatomy</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-22">1</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-23" colspan="2">Uterus</td>
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-24"></td> -->
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-right u-border-no-top u-border-no-bottom u-table-cell u-table-cell-25">164</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-top u-border-no-bottom u-table-cell u-table-cell-26">941</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-27">1016</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-28">663</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom  u-table-cell-29">214</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom  u-table-cell-30">139</td>
+              </tr>
+              <tr style="height: 24px;">
+                <td class="u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-31" rowspan="8"> Instrument</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-32" rowspan="2">1</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-33" rowspan="2">Grasping forceps</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-bottom u-table-cell-34">m</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-right u-border-no-top u-border-no-bottom u-table-cell u-table-cell-35">121</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-top u-border-no-bottom u-table-cell u-table-cell-36">575</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-37">577</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-38">371</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-39">107</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-40">99</td>
+              </tr>
+              <tr style="height: 31px;">
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-41"></td> -->
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-42"></td> -->
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-43"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-top u-table-cell-44">s</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-right u-border-no-top u-border-no-bottom u-table-cell u-table-cell-45">102</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-top u-border-no-bottom u-table-cell u-table-cell-46">439</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-47">442</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-48">291</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-49">89</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-50">62</td>
               </tr>
               <tr style="height: 33px;">
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-10">2</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-11">LigaSure</td>
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-51"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-52" rowspan="2">2</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-53" rowspan="2"> LigaSure</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-bottom u-table-cell-54">m</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-right u-border-no-top u-border-no-bottom u-table-cell u-table-cell-55">261</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-top u-border-no-bottom u-table-cell u-table-cell-56">1476</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-57">1481</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-58">842</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-59">283</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-60">356</td>
               </tr>
-              <tr style="height: 27px;">
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-12">3</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-13"> Dissecting and grasping forceps</td>
+              <tr style="height: 31px;">
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-61"></td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-62"></td> -->
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-63"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-top u-table-cell-64">s</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-right u-border-no-top u-border-no-bottom u-table-cell u-table-cell-65">228</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-top u-border-no-bottom u-table-cell u-table-cell-66">1071</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-67">1074</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-68">630</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-69">206</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-70">238</td>
+              </tr>
+              <tr style="height: 26px;">
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-71"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-72" rowspan="2">3</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-73" rowspan="2"> Dissecting and grasping forceps</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-bottom u-table-cell-74">m</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-75">109</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-76">518</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-77">538</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-78">287</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-79">92</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-80">159</td>
               </tr>
               <tr style="height: 32px;">
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-14">4</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-15"> Electric hook</td>
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-81"></td> -->
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-82"></td> -->
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-83">grasping forceps</td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-top u-table-cell-84">s</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-right u-border-no-top u-border-no-bottom u-table-cell u-table-cell-85">85</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-top u-border-no-bottom u-table-cell u-table-cell-86">365</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-87">373</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-88">189</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-89">81</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-90">103</td>
+              </tr>
+              <tr style="height: 26px;">
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-91"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-92" rowspan="2">4</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-93" rowspan="2"> Electric hook</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-bottom u-table-cell-94">m</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-right u-border-no-top u-border-no-bottom u-table-cell u-table-cell-95">39</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-top u-border-no-bottom u-table-cell u-table-cell-96">200</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-97">202</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-98">104</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-99">50</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-100">48</td>
+              </tr>
+              <tr style="height: 29px;">
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-101"></td> -->
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-102"></td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-103"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-top u-table-cell-104">s</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-right u-border-no-top u-border-no-bottom u-table-cell u-table-cell-105">40</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-top u-border-no-bottom u-table-cell u-table-cell-106">233</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-top u-border-no-bottom u-table-cell-107">233</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-108">124</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-109">55</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-border-no-top u-border-no-bottom u-table-cell-110">54</td>
+              </tr>
+              <tr style="height: 28px;">
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-111"></td> -->
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-112" colspan="4">All</td>
+                <!-- <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-113"></td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-114"></td> -->
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-right u-table-cell u-table-cell-115">300</td>
+                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-border-no-left u-table-cell u-table-cell-116">1800</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-table-cell-117">5936</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-table-cell-118">3501</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-right u-border-no-left u-table-cell-119">1127</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-border-no-left u-table-cell-120">1258</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-3"> The annotations are performed following the settings of instrument part segmentation, i.e., the shaft and manipulator of each instrument are annotated separately.&nbsp;
+        <p class="u-align-left u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-4"> The annotations are performed with an open annotation tool called&nbsp;<a href="https://github.com/wkentaro/labelme" target="_blank" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">LabelMe&nbsp;</a>available online, following the settings of instrument part segmentation, i.e., the shaft and manipulator of each instrument are annotated separately.&nbsp;
         </p>
         <img class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-image u-image-contain u-image-default u-image-1" src="images/10_1_00001.svg" alt="" data-image-width="778" data-image-height="184">
-        <p class="u-align-center u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-4">Pixel-wise annoatation for instrument and key anatomy segmentation.</p>
+        <p class="u-align-center u-custom-font u-font-pt-sans u-text u-text-grey-80 u-text-5">Figure 3. Pixel-wise annoatation for instrument and key anatomy segmentation.</p>
       </div>
     </section>
     <section class="u-clearfix u-section-7" id="carousel_1c58">
@@ -213,46 +441,46 @@ The duration of videos ranges from 27 to 112 minutes due to the varying difficul
         </h2>
         <p class="u-align-justify u-custom-font u-font-pt-sans u-text u-text-2">
           <span style="font-weight: 700;"> [Data download</span>
-          <span style="font-weight: 700;">]</span>&nbsp;<br>- Please kindly fill the&nbsp;<a href="https://forms.gle/qAbmANGuwgU9uES19" data-page-id="951406360" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">request form</a>&nbsp;if you want to gain access to the dataset. We will send you a link to download the dataset.&nbsp;<br><b>
+          <span style="font-weight: 700;">]</span>&nbsp;<br>- Please kindly fill the&nbsp;<a href="https://forms.gle/GWgSLHCSsSdZ3mfQ6" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">request form</a>&nbsp;if you want to gain access to the dataset. We will send you a link to download the dataset.&nbsp;<br><b>
             <span style="font-weight: 400; font-style: italic;">
               <span style="font-weight: 400;">- IMPORTANT</span>
               <span style="font-style: normal;">: </span>
             </span>
             <span style="font-weight: 400;">The released dataset is provided only for&nbsp;academic research, NOT for commercial use.&nbsp;</span></b>
           <br>&nbsp;<br>
-          <span style="font-weight: 700;">[Citation]</span>&nbsp;<br>- If you use this dataset, please cite:&nbsp;<br>Ziyi Wang, Bo Lu, Yonghao Long, Fangxun Zhong, Tak-Hong Cheung, Qi Dou, and Yunhui Liu, <span style="font-style: italic;">AutoLaparo: A New Dataset of Integrated Multi-tasks for Image-guided Surgical Automation in Laparoscopic Hysterectomy</span>, MICCAI, 2022.<br>&nbsp;<br>For further question about the dataset, please contact ziyiwangx@gmail.com.&nbsp;
+          <span style="font-weight: 700;">[Citation]</span>&nbsp;<br>- If you use this dataset, please cite:&nbsp;<br>...<span style="font-style: italic;">TBD</span>...<br>&nbsp;<br>For further question about the dataset, please contact ziyiwangx@gmail.com.&nbsp;
         </p>
       </div>
     </section>
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-322c"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">T Stone robotics institute, The Chinese University of Hong Kong<br>Copyright © Ziyi Wang
-        </p>
-      </div></footer>
-      <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
-  
-      <!-- TODO: Add SDKs for Firebase products that you want to use
-          https://firebase.google.com/docs/web/setup#available-libraries -->
-      <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
-  
-      <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyC1OxUG4b6B12CEXTkA_jlT6hGv_nGYK3c",
-          authDomain: "website-record-f6fc7.firebaseapp.com",
-          projectId: "website-record-f6fc7",
-          storageBucket: "website-record-f6fc7.appspot.com",
-          messagingSenderId: "5233576507",
-          appId: "1:5233576507:web:fbf9cc410935549a8aea1e",
-          measurementId: "G-Q5LDR0WJ7S"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-      </script>
-      <script src="function.js"></script>
+      <p class="u-small-text u-text u-text-variant u-text-1">T Stone robotics institute, The Chinese University of Hong Kong<br>Copyright © Ziyi Wang
+      </p>
+    </div></footer>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyC1OxUG4b6B12CEXTkA_jlT6hGv_nGYK3c",
+        authDomain: "website-record-f6fc7.firebaseapp.com",
+        projectId: "website-record-f6fc7",
+        storageBucket: "website-record-f6fc7.appspot.com",
+        messagingSenderId: "5233576507",
+        appId: "1:5233576507:web:fbf9cc410935549a8aea1e",
+        measurementId: "G-Q5LDR0WJ7S"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="function.js"></script>
   
 </body></html>
