@@ -5643,7 +5643,7 @@ ul.u-text li:last-child {
 }
 img.u-image,
 .u-video-poster {
-  overflow: hidden;
+  overflow: visible;
 }
 .u-back-image.u-image-contain,
 .u-image.u-image-contain {
@@ -37858,7 +37858,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-sheet-1 {
-  min-height: 78px;
+  min-height: 50px;
 }
 
 .u-header .u-image-1 {
@@ -37878,7 +37878,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 @media (max-width: 991px) {
   .u-header .u-sheet-1 {
-    min-height: 106px;
+    min-height: 50px;
   }
 
   .u-header .u-image-1 {
@@ -37888,7 +37888,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 @media (max-width: 767px) {
   .u-header .u-sheet-1 {
-    min-height: 109px;
+    min-height: 50px;
   }
 
   .u-header .u-image-1 {
@@ -37901,7 +37901,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 @media (max-width: 575px) {
   .u-header .u-sheet-1 {
-    min-height: 114px;
+    min-height: 50px;
   }
 
   .u-header .u-image-1 {
