@@ -835,6 +835,7 @@
 
   .u-section-5 .u-table-1 {
     width: 340px;
+    height: 150px
   }
 }.u-section-6 .u-sheet-1 {
   min-height: 1050px;
@@ -1771,7 +1772,7 @@
   }
 
   .u-section-6 .u-image-1 {
-    height: 224px;
+    height: 200px;
     width: auto;
     margin-right: initial;
     margin-left: initial;
@@ -1794,9 +1795,13 @@
   .u-section-6 .u-text-4 {
     margin-top: 41px;
   }
+  .u-section-6 .u-image-1 {
+    height: 112px;
+    width: auto;
 
+  }
   .u-section-6 .u-text-5 {
-    margin-top: -50px;
+    margin-top: 0px;
   }
 }.u-section-7 .u-sheet-1 {
   min-height: 359px;
