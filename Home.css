@@ -1817,6 +1817,11 @@
   margin: 24px 43px 15px;
 }
 
+.u-section-7 .u-text-3 {
+  background-image: none;
+  margin: 24px 43px 15px;
+}
+
 .u-section-7 .u-btn-1 {
   background-image: none;
   padding: 0;
@@ -1836,6 +1841,11 @@
     margin-left: 0;
     margin-right: 0;
   }
+
+  .u-section-7 .u-text-3{
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1847,6 +1857,7 @@
     width: auto;
     margin-top: 30px;
   }
+
 }
 
 @media (max-width: 575px) {
